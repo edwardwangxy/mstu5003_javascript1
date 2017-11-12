@@ -1,0 +1,38 @@
+.grey-color {
+  background-color: #efefef;
+}
+#about {
+  background-color: #f4511e;
+  color: white;
+}
+.containpad {
+  padding: 50px;
+}
+.margintop {
+  margin-top: 50px;
+}
+.mypic {
+  border-radius: 50%;
+}
+#centermypic {
+  color: white;
+  margin-top: 2%;
+}
+#port {
+  background-color: #fbe9e7;
+}
+.listitem {
+  font-size: 20px;
+}
+#contact {
+  background-color: #e64a19;
+  color: white;
+}
+.logo {
+  margin-top: 2%;
+  width: 100px;
+}
+.logotext {
+  color: white;
+  margin-top: 10px;
+}

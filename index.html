@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!--  Meta  -->
+  <meta charset="UTF-8" />
+  <title>Student Page</title>
+
+  <!--  Styles  -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+  <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">Student Page</a>
+      </div>
+      <div id="navbar" class="navbar-collapse collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="teacher.html"><span class="label label-warning">teacher page</span></a></li>
+        </ul>
+      </div>
+  </nav>
+  <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-sm">
+      <div class="modal-content">
+        Welcome to this lesson
+      </div>
+    </div>
+  </div>
+  <div id="su-obj-mod" class="modal fade bd-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        Congradulation, You have just created your main-character object
+      </div>
+    </div>
+  </div>
+  <div id="su-obj-mod-2" class="modal fade bd-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        Congradulation, You have just created your enemy object
+      </div>
+    </div>
+  </div>
+  <div id="su-obj-mod-3" class="modal fade bd-example-modal-md" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-md">
+      <div class="modal-content">
+        Congradulation, You have just created your first class
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-3">
+
+      </div>
+      <div class="col-md-6">
+        <div class="main">
+          <div id="pickgender" class=" text-center">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title">Are You:</h3>
+              </div>
+              <div class="panel-body">
+                <input type="radio" id="gender1" name="gender" value="m">
+                <label for="gender1">Male</label>
+
+                <input type="radio" id="gender2" name="gender" value="f">
+                <label for="gender2">Female</label>
+                <br>
+                <button onclick="getusergender()" type="button" class="btn btn-primary">Next</button>
+              </div>
+            </div>
+
+          </div>
+          <div id="story1">
+
+            <div class="main-feature">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title  text-center">Let's begin with creating a fighting Game</h3>
+                </div>
+                <div class="panel-body">
+                  <label>First give your main character some features</label>
+                  <textarea class="form-control" placeholder="Height;Weight;Blood;Attack;Defense;" onkeyup="main_fea()"></textarea>
+                  <small class="form-text text-muted">Please Split Features with ";". For Example: Height;Weight;Blood;Attack;Defense;</small>
+                  <pre class="def-fea-res">You have pick:<br><br></pre>
+                  <br>
+                  <button onclick="main_fea_sub()" type="button" class="btn btn-primary">Next</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="main-value">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title  text-center">Let's Give those features some value</h3>
+                </div>
+                <div class="panel-body">
+                  <div class="label-value">
+                    <label>Height:</label>
+                    <input type="text" class="form-control" placeholder="Height">
+                  </div>
+                  <br>
+                  <button onclick="firstobj()" type="button" class="btn btn-primary">Next</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="ene-feature">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title  text-center">Let's Create another character with same features</h3>
+                </div>
+                <div class="panel-body">
+                  <label>create features for this character</label>
+                  <textarea class="form-control" placeholder="Height;Weight;Blood;Attack;Defense;" onkeyup="ene_fea()" disabled></textarea>
+                  <small class="form-text text-muted">Please Split Features with ";". For Example: Height;Weight;Blood;Attack;Defense;</small>
+                  <pre class="def-fea-res">You have pick:<br><br></pre>
+                  <br>
+                  <button onclick="ene_fea_sub()" type="button" class="btn btn-primary">Next</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="ene-value">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title  text-center">Let's Give those features some different value</h3>
+                </div>
+                <div class="panel-body">
+                  <div class="label-value">
+                    <label>Height:</label>
+                    <input type="text" class="form-control" placeholder="Height" onchange="updateUsername()">
+                  </div>
+                  <br>
+                  <button onclick="secondobj()" type="button" class="btn btn-primary">Next</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="common-fea">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title  text-center">Can you find some common features of this two characters?</h3>
+                </div>
+                <div class="panel-body">
+                  <label>How you can group two objects?</label>
+                  <input type="text" class="form-control group-objs" placeholder="characters" onchange="updateUsername()">
+                  <label>Common Features</label>
+                  <textarea class="form-control common-fea-text" placeholder="Height;Weight;Blood;Attack;Defense;" onkeyup="common_fea()"></textarea>
+                  <small class="form-text text-muted">Please Split Features with ";". For Example: Height;Weight;Blood;Attack;Defense;</small>
+                  <pre class="def-fea-res">You have pick:<br><br></pre>
+                  <br>
+                  <button onclick="common_sub()" type="button" class="btn btn-primary">Next</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="create-obj">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title  text-center">Now we can using this class to create your common characters</h3>
+                </div>
+                <div class="panel-body">
+                  <label>We can say character1 is a New character with some preset values</label>
+                  <input type="text" class="form-control char1-str" placeholder="char1=new char(fea1=1, fea2=2...)" onchange="updateUsername()">
+                  <small class="form-text text-muted">When coding we will use "=" to denote "is" and you can type in "char1=new char(fea1=1, fea2=2...)"</small><br>
+                  <label>We can create character2 with the same way</label>
+                  <input type="text" class="form-control char2-str" placeholder="char2=new char(fea1=2, fea2=3...)" onchange="updateUsername()">
+
+                  <br>
+                  <button onclick="create_obj_class()" type="button" class="btn btn-primary">Next</button>
+                </div>
+              </div>
+            </div>
+
+
+          </div>
+          <div id="story2">
+
+            <div class="main-feature">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title  text-center">Let's begin with creating a set of lipsticks</h3>
+                </div>
+                <div class="panel-body">
+                  <label>First give your first lipstick some features</label>
+                  <textarea class="form-control" placeholder="color;length;..." onkeyup="main_fea()"></textarea>
+                  <small class="form-text text-muted">Please Split Features with ";". For Example: color;length;...</small>
+                  <pre class="def-fea-res">You have pick:<br><br></pre>
+                  <br>
+                  <button onclick="main_fea_sub()" type="button" class="btn btn-primary">Next</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="main-value">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title  text-center">Let's Give those features some value</h3>
+                </div>
+                <div class="panel-body">
+                  <div class="label-value">
+                    <label>length:</label>
+                    <input type="text" class="form-control" placeholder="length">
+                  </div>
+                  <br>
+                  <button onclick="firstobj()" type="button" class="btn btn-primary">Next</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="ene-feature">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title  text-center">First give your second lipstick some features</h3>
+                </div>
+                <div class="panel-body">
+                  <label>create features for this character</label>
+                  <textarea class="form-control" placeholder="color;length;..." onkeyup="ene_fea()" disabled></textarea>
+                  <small class="form-text text-muted">Please Split Features with ";". For Example: color;length;...</small>
+                  <pre class="def-fea-res">You have pick:<br><br></pre>
+                  <br>
+                  <button onclick="ene_fea_sub()" type="button" class="btn btn-primary">Next</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="ene-value">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title  text-center">Let's Give those features some different value</h3>
+                </div>
+                <div class="panel-body">
+                  <div class="label-value">
+                    <label>length:</label>
+                    <input type="text" class="form-control" placeholder="length" onchange="updateUsername()">
+                  </div>
+                  <br>
+                  <button onclick="secondobj()" type="button" class="btn btn-primary">Next</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="common-fea">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title  text-center">Can you find some common features of these two lipsticks?</h3>
+                </div>
+                <div class="panel-body">
+                  <label>Give your set a name?</label>
+                  <input type="text" class="form-control group-objs" placeholder="lipsticks">
+                  <label>Common Features</label>
+                  <textarea class="form-control common-fea-text" placeholder="color;length;..." onkeyup="common_fea()"></textarea>
+                  <small class="form-text text-muted">Please Split Features with ";". For Example: color;length;...</small>
+                  <pre class="def-fea-res">You have pick:<br><br></pre>
+                  <br>
+                  <button onclick="common_sub()" type="button" class="btn btn-primary">Next</button>
+                </div>
+              </div>
+            </div>
+
+            <div class="create-obj">
+              <div class="panel panel-default">
+                <div class="panel-heading">
+                  <h3 class="panel-title  text-center">Now we can using this class to create your other lipsticks</h3>
+                </div>
+                <div class="panel-body">
+                  <label>We can say newlips is a New lipstick with some preset values</label>
+                  <input type="text" class="form-control char1-str" placeholder="char1=new char(fea1=1, fea2=2...)" onchange="updateUsername()">
+                  <small class="form-text text-muted">When coding we will use "=" to denote "is" and you can type in "char1=new char(fea1=1, fea2=2...)"</small><br>
+                  <label>We can create newlips2 is a New lipstick with the same way</label>
+                  <input type="text" class="form-control char2-str" placeholder="char2=new char(fea1=2, fea2=3...)" onchange="updateUsername()">
+
+                  <br>
+                  <button onclick="create_obj_class()" type="button" class="btn btn-primary">Next</button>
+                </div>
+              </div>
+            </div>
+
+          </div>
+          <div id="fullcode">
+            <div class="panel panel-default">
+              <div class="panel-heading">
+                <h3 class="panel-title  text-center">Javascript Editor</h3>
+              </div>
+              <div class="panel-body">
+                <label>You can type any javascript down here for testing, use alert() to show result</label>
+                <textarea id="full-code-text" type="text" class="form-control" placeholder="waiting for code..." rows=30></textarea>
+                <br>
+                <button onclick="showfull()" type="button" class="btn btn-primary">Submit Code</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div id="inputjavaresult" class="col-md-3">
+
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+  <script src="//cdn.jsdelivr.net/velocity/1.5/velocity.min.js"></script>
+  <script src="//cdn.jsdelivr.net/velocity/1.5/velocity.ui.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="scripts/index.js"></script>
+</body>
+
+</html>
